@@ -1,0 +1,8 @@
+input:
+    http:
+        url: "http://localhost:7788"
+        token: d6e9a6b170784fdfb4ef54417a32f391
+output:
+    schema: "./schema.g.json"
+    go_types: 
+    typescript_types:
