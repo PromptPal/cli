@@ -31,10 +31,17 @@ type ServerErrorResponse struct {
 
 // MARK: PromptSchema
 
+type PromptVariable struct {
+	Name string `json:"name"`
+	// string, number, bool
+	Type string `json:"type"`
+}
+
 type PromptSchema struct {
 	HashID      string    `json:"id"`
 	Name        string    `json:"name"`
 	Description string    `json:"description"`
+	Variables   []any     `json:"variables"`
 	TokenCount  int       `json:"tokenCount"`
 	CreatedAt   time.Time `json:"createdAt"`
 }
