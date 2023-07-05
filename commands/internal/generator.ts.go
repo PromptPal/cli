@@ -1,5 +1,5 @@
 package internal
 
-func GenerateTypeScriptTypes(schema []PromptSchema) ([]byte, error) {
+func GenerateTypeScriptTypes(schema []PromptSchema, cfg *ConfigurationOutputTS) ([]byte, error) {
 	return nil, nil
 }

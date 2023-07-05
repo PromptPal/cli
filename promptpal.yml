@@ -4,5 +4,10 @@ input:
         token: d6e9a6b170784fdfb4ef54417a32f391
 output:
     schema: "./schema.g.json"
-    go_types: 
+    go_types:
+        prefix: PP
+        output: "./example/types.g.go"
+        package_name: "ppp"
     typescript_types:
+        prefix: PP
+        output: "./example/types.g.ts"

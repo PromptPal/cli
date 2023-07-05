@@ -59,9 +59,16 @@ func commandInit(c *cli.Context) error {
 			},
 		},
 		Output: internal.ConfigurationOutput{
-			Schema:          "./schema.g.json",
-			GoTypes:         "./types.go",
-			TypeScriptTypes: "./types.ts",
+			Schema: "./schema.g.json",
+			GoTypes: &internal.ConfigurationOutputGo{
+				Prefix:      "PPExample",
+				PackageName: "main",
+				Output:      "./example/types.g.go",
+			},
+			TypeScriptTypes: &internal.ConfigurationOutputTS{
+				Prefix: "PPExample",
+				Output: "./example/types.g.ts",
+			},
 		},
 	}
 

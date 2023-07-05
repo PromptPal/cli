@@ -5,6 +5,7 @@ import (
 	"errors"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"os"
 	"path"
 	"strconv"
@@ -79,24 +80,39 @@ func commandGenerate(c *cli.Context) error {
 	}
 
 	// generate go types
-	if config.Output.GoTypes != "" {
-		goTypesBuf, err := internal.GenerateGoTypes(schema)
+	if config.Output.GoTypes != nil && config.Output.GoTypes.Output != "" {
+		goTypesBuf, err := internal.GenerateGoTypes(schema, config.Output.GoTypes)
 		if err != nil {
 			return err
 		}
-		err = ioutil.WriteFile(config.Output.GoTypes, goTypesBuf, 0644)
+		err = os.Remove(config.Output.GoTypes.Output)
+		if err != nil {
+			if os.IsNotExist(err) {
+				err = nil
+			}
+			if err != nil {
+				return err
+			}
+		}
+
+		ooo := path.Join(cwd, config.Output.GoTypes.Output)
+		log.Println("xxxxx", goTypesBuf, ooo, config.Output.GoTypes.Output)
+
+		err = os.WriteFile(config.Output.GoTypes.Output, goTypesBuf, 0644)
+		// err = os.WriteFile(ooo, []byte("hello world"), 0644)
+		// err = os.WriteFile("./types.go", []byte("hello world"), 0644)
 		if err != nil {
 			return err
 		}
 	}
 
 	// generate typescript types
-	if config.Output.TypeScriptTypes != "" {
-		typeScriptTypesBuf, err := internal.GenerateTypeScriptTypes(schema)
+	if config.Output.TypeScriptTypes != nil && config.Output.TypeScriptTypes.Output != "" {
+		typeScriptTypesBuf, err := internal.GenerateTypeScriptTypes(schema, config.Output.TypeScriptTypes)
 		if err != nil {
 			return err
 		}
-		err = ioutil.WriteFile(config.Output.TypeScriptTypes, typeScriptTypesBuf, 0644)
+		err = os.WriteFile(config.Output.TypeScriptTypes.Output, typeScriptTypesBuf, 0644)
 		if err != nil {
 			return err
 		}

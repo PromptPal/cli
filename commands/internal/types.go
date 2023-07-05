@@ -11,10 +11,21 @@ type ConfigurationInput struct {
 	Http ConfigurationInputHttp `yaml:"http"`
 }
 
+type ConfigurationOutputGo struct {
+	Prefix      string `yaml:"prefix"`
+	PackageName string `yaml:"package_name"`
+	Output      string `yaml:"output"`
+}
+
+type ConfigurationOutputTS struct {
+	Prefix string `yaml:"prefix"`
+	Output string `yaml:"output"`
+}
+
 type ConfigurationOutput struct {
-	Schema          string `yaml:"schema"`
-	GoTypes         string `yaml:"go_types"`
-	TypeScriptTypes string `yaml:"typescript_types"`
+	Schema          string                 `yaml:"schema"`
+	GoTypes         *ConfigurationOutputGo `yaml:"go_types"`
+	TypeScriptTypes *ConfigurationOutputTS `yaml:"typescript_types"`
 }
 
 type Configuration struct {
@@ -38,10 +49,10 @@ type PromptVariable struct {
 }
 
 type PromptSchema struct {
-	HashID      string    `json:"id"`
-	Name        string    `json:"name"`
-	Description string    `json:"description"`
-	Variables   []any     `json:"variables"`
-	TokenCount  int       `json:"tokenCount"`
-	CreatedAt   time.Time `json:"createdAt"`
+	HashID      string           `json:"id"`
+	Name        string           `json:"name"`
+	Description string           `json:"description"`
+	Variables   []PromptVariable `json:"variables"`
+	TokenCount  int              `json:"tokenCount"`
+	CreatedAt   time.Time        `json:"createdAt"`
 }
