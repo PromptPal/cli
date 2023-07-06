@@ -22,3 +22,4 @@ go.work
 schema.g.json
 *.g.go
 *.g.ts
+dist/
