@@ -5,7 +5,6 @@ import (
 	"errors"
 	"fmt"
 	"io/ioutil"
-	"log"
 	"os"
 	"path"
 	"strconv"
@@ -94,9 +93,6 @@ func commandGenerate(c *cli.Context) error {
 				return err
 			}
 		}
-
-		ooo := path.Join(cwd, config.Output.GoTypes.Output)
-		log.Println("xxxxx", goTypesBuf, ooo, config.Output.GoTypes.Output)
 
 		err = os.WriteFile(config.Output.GoTypes.Output, goTypesBuf, 0644)
 		// err = os.WriteFile(ooo, []byte("hello world"), 0644)

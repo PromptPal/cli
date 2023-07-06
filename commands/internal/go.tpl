@@ -15,5 +15,3 @@ type {{ $.Prefix }}Prompt{{ capitalize .Name}}Variables struct {
 	{{ end}}
 }
 {{ end }}
-
-
