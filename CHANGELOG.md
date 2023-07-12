@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/PromptPal/cli/compare/v1.0.1...v1.0.2) (2023-07-12)
+
+
+### Bug Fixes
+
+* **ci:** disable binary sign ([af16c1e](https://github.com/PromptPal/cli/commit/af16c1efc4927fc6d8d32b5c9196ec20358d3cf1))
+
 ## [1.0.1](https://github.com/PromptPal/cli/compare/v1.0.0...v1.0.1) (2023-07-12)
 
 
