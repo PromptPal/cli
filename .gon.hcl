@@ -3,7 +3,7 @@
 # The path follows a pattern
 # ./dist/BUILD-ID_TARGET/BINARY-NAME
 # source = ["./dist/${artifact}.dmg"]
-source = ["./dist/promptpal.dmg"]
+source = ["dist/cli_darwin_amd64_v1/prompt-pal-binary-cli", "dist/cli_darwin_arm64/prompt-pal-binary-cli"]
 bundle_id = "com.annatarhe.promptpal.cli"
 
 apple_id {
@@ -12,5 +12,5 @@ apple_id {
 }
 
 sign {
-  application_identity = "Developer ID Application: Annatar He"
+  application_identity = "Developer ID Application: Le He"
 }

@@ -1,27 +1,17 @@
-before:
-  hooks:
-    - go mod tidy
 builds:
-  - env:
-      - CGO_ENABLED=0
+  # - binary: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}."
+  - binary: "prompt-pal-binary-cli"
     goos:
-      - linux
       - windows
       - darwin
-  - binary: promptpal
-    id: promptpal
-    goos:
-    - linux
-    - windows
-  - ldflags:
-    - -X github.com/PromptPal/cli/main.GitCommit={{ .Version }}
-  - binary: promptpal
-    id: promptpal-macos
-    goos:
-    - darwin
-  - ldflags:
-    - -X github.com/PromptPal/cli/main.GitCommit={{ .Version }}
-
+      - linux
+    goarch:
+      - amd64
+      - arm64
+    env:
+      - CGO_ENABLED=0
+    ldflags:
+      - -X github.com/PromptPal/cli/main.GitCommit={{ .Version }}
 archives:
   - format: tar.gz
     # this name template makes the OS and Arch compatible with the results of uname.
@@ -48,7 +38,7 @@ changelog:
       - '^test:'
 
 signs:
-  - signature: "./dist/${artifact}.dmg"
+  - signature: "${artifact}.dmg"
     ids:
     - promptpal-macos # here we filter the macos only build id
     # you'll need to have gon on PATH
