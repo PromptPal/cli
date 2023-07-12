@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/PromptPal/cli/compare/v1.0.0...v1.0.1) (2023-07-12)
+
+
+### Bug Fixes
+
+* **ci:** fix ci issue ([b6e0b1a](https://github.com/PromptPal/cli/commit/b6e0b1a6e243a01edb87b570f08f30034669fcc8))
+
 ## 1.0.0 (2023-07-10)
 
 
