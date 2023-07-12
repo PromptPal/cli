@@ -37,14 +37,15 @@ changelog:
       - '^docs:'
       - '^test:'
 
-signs:
-  - signature: "${artifact}.dmg"
-    ids:
-    - promptpal-macos # here we filter the macos only build id
-    # you'll need to have gon on PATH
-    cmd: gon
-    # you can follow the gon docs to properly create the gon.hcl config file:
-    # https://github.com/mitchellh/gon
-    args:
-    - .gon.hcl
-    artifacts: all
+# TODO: enable it later
+# signs:
+#   - signature: "${artifact}.dmg"
+#     ids:
+#     - promptpal-macos # here we filter the macos only build id
+#     # you'll need to have gon on PATH
+#     cmd: gon
+#     # you can follow the gon docs to properly create the gon.hcl config file:
+#     # https://github.com/mitchellh/gon
+#     args:
+#     - .gon.hcl
+#     artifacts: all
