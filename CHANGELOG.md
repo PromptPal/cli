@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/PromptPal/cli/compare/v1.0.2...v1.0.3) (2023-07-13)
+
+
+### Bug Fixes
+
+* **ci:** try to sign binary in macos ([07f0e02](https://github.com/PromptPal/cli/commit/07f0e02c1ae3a54e8315d259dc2ff08c8d6852eb))
+
 ## [1.0.2](https://github.com/PromptPal/cli/compare/v1.0.1...v1.0.2) (2023-07-12)
 
 
