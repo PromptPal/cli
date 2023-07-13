@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.6](https://github.com/PromptPal/cli/compare/v1.0.5...v1.0.6) (2023-07-13)
+
+
+### Bug Fixes
+
+* **ci:** fix binary sign ([a01cab9](https://github.com/PromptPal/cli/commit/a01cab9c7b6815d3361bf0bce338d52e7424964a))
+
 ## [1.0.5](https://github.com/PromptPal/cli/compare/v1.0.4...v1.0.5) (2023-07-13)
 
 
