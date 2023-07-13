@@ -1,10 +1,9 @@
 builds:
   # - binary: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}."
-  - binary: "prompt-pal-binary-cli"
-    id: promptpal-cli
+  - binary: "promptpal"
+    id: pp-common
     goos:
       - windows
-      - darwin
       - linux
     goarch:
       - amd64
@@ -13,6 +12,20 @@ builds:
       - CGO_ENABLED=0
     ldflags:
       - -X github.com/PromptPal/cli/main.GitCommit={{ .Version }}
+  - binary: "promptpal"
+    id: pp-mac
+    goos:
+      - darwin
+    goarch:
+      - amd64
+      - arm64
+    env:
+      - CGO_ENABLED=0
+    ldflags:
+      - -X github.com/PromptPal/cli/main.GitCommit={{ .Version }}
+    hooks:
+      post:
+        - ./post-build.bash
 archives:
   - format: tar.gz
     # this name template makes the OS and Arch compatible with the results of uname.
@@ -39,10 +52,10 @@ changelog:
       - '^test:'
 
 signs:
-  - signature: "${artifact}.dmg"
+  - signature: "${artifact}"
     ids:
-    - promptpal-macos # here we filter the macos only build id
-    # you'll need to have gon on PATH
+    - pp-common
+    - pp-mac
     cmd: gon
     # you can follow the gon docs to properly create the gon.hcl config file:
     # https://github.com/mitchellh/gon
