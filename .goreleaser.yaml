@@ -1,6 +1,7 @@
 builds:
   # - binary: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}."
   - binary: "prompt-pal-binary-cli"
+    id: promptpal-cli
     goos:
       - windows
       - darwin
@@ -37,15 +38,103 @@ changelog:
       - '^docs:'
       - '^test:'
 
-# TODO: enable it later
+signs:
+  - signature: "${artifact}.dmg"
+    ids:
+    - promptpal-macos # here we filter the macos only build id
+    # you'll need to have gon on PATH
+    cmd: gon
+    # you can follow the gon docs to properly create the gon.hcl config file:
+    # https://github.com/mitchellh/gon
+    args:
+    - .gon.hcl
+    artifacts: all
+
 # signs:
-#   - signature: "${artifact}.dmg"
-#     ids:
-#     - promptpal-macos # here we filter the macos only build id
-#     # you'll need to have gon on PATH
-#     cmd: gon
-#     # you can follow the gon docs to properly create the gon.hcl config file:
-#     # https://github.com/mitchellh/gon
-#     args:
-#     - .gon.hcl
-#     artifacts: all
+  # - cmd: cosign
+    # signature: "${artifact}.sig"
+    # certificate: '{{ trimsuffix (trimsuffix .Env.artifact ".zip") ".tar.gz" }}.pem'
+    # args: ["sign-blob", "--yes", "--output-signature=${signature}", "--output-certificate", "${certificate}", "${artifact}"]
+    # artifacts: all
+
+release:
+  # Repo in which the release will be created.
+  # Default is extracted from the origin remote URL or empty if its private hosted.
+  github:
+    owner: PromptPal
+    name: cli
+
+  # IDs of the archives to use.
+  # Empty means all IDs.
+  #
+  # Default: []
+  ids:
+    - default
+    # - cli
+
+  # If set to true, will not auto-publish the release.
+  # Available only for GitHub and Gitea.
+  #
+  # Default: false
+  draft: false
+
+  # Whether to remove existing draft releases with the same name before creating
+  # a new one.
+  # Only effective if `draft` is set to true.
+  # Available only for GitHub.
+  #
+  # Default: false
+  # Since: v1.11
+  replace_existing_draft: false
+
+  # Useful if you want to delay the creation of the tag in the remote.
+  # You can create the tag locally, but not push it, and run GoReleaser.
+  # It'll then set the `target_commitish` portion of the GitHub release to the
+  # value of this field.
+  # Only works on GitHub.
+  #
+  # Default: ''
+  # Since: v1.11
+  # Templates: allowed
+  target_commitish: "{{ .Commit }}"
+
+  # If set, will create a release discussion in the category specified.
+  #
+  # Warning: do not use categories in the 'Announcement' format.
+  #  Check https://github.com/goreleaser/goreleaser/issues/2304 for more info.
+  #
+  # Default is empty.
+  discussion_category_name: General
+
+  # If set to auto, will mark the release as not ready for production
+  # in case there is an indicator for this in the tag e.g. v1.0.0-rc1
+  # If set to true, will mark the release as not ready for production.
+  # Default is false.
+  prerelease: 'false'
+
+  # What to do with the release notes in case there the release already exists.
+  #
+  # Valid options are:
+  # - `keep-existing`: keep the existing notes
+  # - `append`: append the current release notes to the existing notes
+  # - `prepend`: prepend the current release notes to the existing notes
+  # - `replace`: replace existing notes
+  #
+  # Default is `keep-existing`.
+  # mode: append
+  mode: keep-existing
+  header: |
+    ## Some title ({{ .Date }})
+
+    Welcome to this new release!
+  footer: |
+    ## Thanks!
+
+    Those were the changes on {{ .Tag }}!
+  name_template: "{{.ProjectName}}-v{{.Version}} {{.Env.USER}}"
+  disable: false
+  skip_upload: false
+  extra_files:
+    - glob: ./dist/*.tar.gz
+    - glob: ./dist/*.zip
+    - glob: ./dist/checksums.txt
