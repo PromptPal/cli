@@ -3,7 +3,7 @@
 # The path follows a pattern
 # ./dist/BUILD-ID_TARGET/BINARY-NAME
 # source = ["./dist/${artifact}.dmg"]
-source = ["dist/cli_darwin_amd64_v1/prompt-pal-binary-cli", "dist/cli_darwin_arm64/prompt-pal-binary-cli"]
+source = ["dist/prompt-cli_darwin_amd64_v1/prompt-pal-binary-cli", "dist/prompt-cli_darwin_arm64/prompt-pal-binary-cli"]
 bundle_id = "com.annatarhe.promptpal.cli"
 
 apple_id {
