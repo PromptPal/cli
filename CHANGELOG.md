@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.4](https://github.com/PromptPal/cli/compare/v1.0.3...v1.0.4) (2023-07-13)
+
+
+### Bug Fixes
+
+* **ci:** fix code sign ([12baa66](https://github.com/PromptPal/cli/commit/12baa668628ea143c2cc61a3baeeae5e647a9007))
+* **ci:** fix gon command ([e2e8c2b](https://github.com/PromptPal/cli/commit/e2e8c2b513f5cd2880b7ae1c8a2af065fde3fd34))
+
 ## [1.0.3](https://github.com/PromptPal/cli/compare/v1.0.2...v1.0.3) (2023-07-13)
 
 
