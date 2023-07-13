@@ -51,17 +51,17 @@ changelog:
       - '^docs:'
       - '^test:'
 
-signs:
-  - signature: "${artifact}"
-    ids:
-    - pp-common
-    - pp-mac
-    cmd: gon
-    # you can follow the gon docs to properly create the gon.hcl config file:
-    # https://github.com/mitchellh/gon
-    args:
-    - .gon.hcl
-    artifacts: all
+# signs:
+#   - signature: "${artifact}"
+#     ids:
+#     - pp-common
+#     - pp-mac
+#     cmd: gon
+#     # you can follow the gon docs to properly create the gon.hcl config file:
+#     # https://github.com/mitchellh/gon
+#     args:
+#     - .gon.hcl
+#     artifacts: all
 
 # signs:
   # - cmd: cosign
@@ -135,7 +135,7 @@ release:
   #
   # Default is `keep-existing`.
   # mode: append
-  mode: keep-existing
+  mode: replace
   header: |
     ## Some title ({{ .Date }})
 
