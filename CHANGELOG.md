@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.7](https://github.com/PromptPal/cli/compare/v1.0.6...v1.0.7) (2023-07-14)
+
+
+### Bug Fixes
+
+* **ci:** add sign and notarition for mac binary cli ([305c103](https://github.com/PromptPal/cli/commit/305c1035b8a25e1c358d4086de8c068c95171ea0))
+
 ## [1.0.6](https://github.com/PromptPal/cli/compare/v1.0.5...v1.0.6) (2023-07-13)
 
 
