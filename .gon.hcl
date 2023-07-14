@@ -14,3 +14,7 @@ apple_id {
 sign {
   application_identity = "Developer ID Application: Le He"
 }
+
+zip {
+  output_path = "./dist/macos-pp.zip"
+}

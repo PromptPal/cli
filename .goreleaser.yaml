@@ -25,9 +25,11 @@ builds:
       - -X github.com/PromptPal/cli/main.GitCommit={{ .Version }}
     hooks:
       post:
-        - ./post-build.bash
+        - ./post-build.bash {{ .Path }}
 archives:
   - format: tar.gz
+    builds:
+      - pp-common
     # this name template makes the OS and Arch compatible with the results of uname.
     name_template: >-
       {{ .ProjectName }}_
@@ -137,9 +139,11 @@ release:
   # mode: append
   mode: replace
   header: |
-    ## Some title ({{ .Date }})
+    ## PromptPal CLI ({{ .Date }})
 
     Welcome to this new release!
+
+    please download your version and put it into your $PATH
   footer: |
     ## Thanks!
 
@@ -148,7 +152,7 @@ release:
   name_template: "v{{.Version}}"
   disable: false
   skip_upload: false
-  # extra_files:
+  extra_files:
+    - glob: ./dist/*-mac.zip
   #   - glob: ./dist/*.tar.gz
-  #   - glob: ./dist/*.zip
   #   - glob: ./dist/checksums.txt
