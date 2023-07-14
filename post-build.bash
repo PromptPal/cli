@@ -12,6 +12,9 @@ fi
 # Extract the last folder name from the file path as the file name
 file_name=$(basename "$(dirname "$file_path")")
 
+# Replace 'pp-mac_darwin_' with 'cli_Darwin_'
+dist_file_name="${file_name/pp-mac_darwin_/cli_Darwin_}"
+
 # Create a template config file
 timestamp=$(date +%Y%m%d%H%M%S)
 config_file=".gon.temp.${timestamp}.hcl"
@@ -31,7 +34,7 @@ sign {
 }
 
 zip {
-  output_path = "./dist/$file_name-mac.zip"
+  output_path = "./dist/$dist_file_name.zip"
 }
 EOF
 

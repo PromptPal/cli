@@ -25,7 +25,8 @@ builds:
       - -X github.com/PromptPal/cli/main.GitCommit={{ .Version }}
     hooks:
       post:
-        - ./post-build.bash {{ .Path }}
+        - cmd: ./post-build.bash {{ .Path }}
+          output: true
 archives:
   - format: tar.gz
     builds:
