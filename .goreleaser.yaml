@@ -154,6 +154,6 @@ release:
   disable: false
   skip_upload: false
   extra_files:
-    - glob: ./dist/*-mac.zip
+    - glob: ./dist/cli_Darwin_*.zip
   #   - glob: ./dist/*.tar.gz
   #   - glob: ./dist/checksums.txt
