@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.9](https://github.com/PromptPal/cli/compare/v1.0.8...v1.0.9) (2023-07-14)
+
+
+### Bug Fixes
+
+* **ci:** fix artifacts when upload ([db958c6](https://github.com/PromptPal/cli/commit/db958c61927859a0d8e327ce181d4ff82d197a10))
+
 ## [1.0.8](https://github.com/PromptPal/cli/compare/v1.0.7...v1.0.8) (2023-07-14)
 
 
