@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.8](https://github.com/PromptPal/cli/compare/v1.0.7...v1.0.8) (2023-07-14)
+
+
+### Bug Fixes
+
+* **ci:** fix dist folder name when os is Mac ([e5a5c48](https://github.com/PromptPal/cli/commit/e5a5c48eda6b6f7d9ac6269ae8fbe0796d5ae185))
+
 ## [1.0.7](https://github.com/PromptPal/cli/compare/v1.0.6...v1.0.7) (2023-07-14)
 
 
