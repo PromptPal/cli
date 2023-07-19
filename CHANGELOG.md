@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/PromptPal/cli/compare/v1.0.9...v1.1.0) (2023-07-19)
+
+
+### Features
+
+* **config:** support set API token by env in config ([caa5aec](https://github.com/PromptPal/cli/commit/caa5aec5c33857e323cea05fa9838e323c528893))
+
 ## [1.0.9](https://github.com/PromptPal/cli/compare/v1.0.8...v1.0.9) (2023-07-14)
 
 
