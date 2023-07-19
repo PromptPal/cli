@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/PromptPal/cli/compare/v1.1.0...v1.1.1) (2023-07-19)
+
+
+### Bug Fixes
+
+* **config:** update init command default config ([f88740c](https://github.com/PromptPal/cli/commit/f88740caff899562c49cfbe584e8ca1ddbf075d3))
+
 ## [1.1.0](https://github.com/PromptPal/cli/compare/v1.0.9...v1.1.0) (2023-07-19)
 
 
