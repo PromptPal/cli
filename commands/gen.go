@@ -8,6 +8,7 @@ import (
 	"os"
 	"path"
 	"strconv"
+	"strings"
 	"time"
 
 	"github.com/PromptPal/cli/commands/internal"
@@ -125,12 +126,18 @@ func loadSchema(client *resty.Client, config internal.Configuration) ([]internal
 
 	schemaFilePath := path.Join(cwd, config.Output.Schema)
 
+	apiToken := config.Input.Http.APIToken
+
+	if strings.HasPrefix(apiToken, "@env.") {
+		apiToken = os.Getenv(strings.TrimPrefix(apiToken, "@env."))
+	}
+
 	// TODO: load from cache
 
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetAuthScheme("API").
-		SetAuthToken(config.Input.Http.APIToken).
+		SetAuthToken(apiToken).
 		SetError(internal.ServerErrorResponse{}).
 		SetQueryParam("limit", "100").
 		SetQueryParam("cursor", strconv.Itoa(1<<30)).

@@ -55,7 +55,7 @@ func commandInit(c *cli.Context) error {
 		Input: internal.ConfigurationInput{
 			Http: internal.ConfigurationInputHttp{
 				Url:      "http://localhost:8080",
-				APIToken: "token",
+				APIToken: "@env.PROMPTPAL_API_TOKEN",
 			},
 		},
 		Output: internal.ConfigurationOutput{

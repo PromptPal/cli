@@ -56,7 +56,8 @@ An example of a promptpal.yaml configuration file:
 input:
     http:
         url: "http://localhost:7788"
-        token: d6e9a6b170784fdfb4ef54417a32f391
+        # token: d6e9a6b170784fdfb4ef54417a32f391
+        token: @env.PROMPTPAL_API_TOKEN
 output:
     schema: "./schema.g.json"
     go_types:
