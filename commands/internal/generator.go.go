@@ -10,6 +10,9 @@ import (
 var goTpl string
 
 func GenerateGoTypes(schema []PromptSchema, cfg *ConfigurationOutputGo) ([]byte, error) {
+	if len(schema) == 0 {
+		return []byte{}, nil
+	}
 	t := template.Must(template.New("go").Funcs(template.FuncMap{
 		"capitalize": capitalizeFunc,
 	}).Parse(goTpl))

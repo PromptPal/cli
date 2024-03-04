@@ -3,15 +3,15 @@ package {{ .PackageName }}
 type {{ .Prefix }}Prompts string
 
 const (
-	{{ range .Prompts }}
+	{{- range .Prompts }}
 	{{ $.Prefix }}Prompt{{ capitalize .Name }} {{ $.Prefix }}Prompts = "{{ .HashID }}"
-	{{ end }}
+	{{- end }}
 )
 
 {{ range .Prompts }}
 type {{ $.Prefix }}Prompt{{ capitalize .Name}}Variables struct {
-	{{ range $v := .Variables }}
+	{{- range $v := .Variables }}
 	{{ capitalize $v.Name }} string `json:"{{ $v.Name }}"`
-	{{ end}}
+	{{- end}}
 }
 {{ end }}

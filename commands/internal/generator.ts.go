@@ -10,6 +10,9 @@ import (
 var tsTpl string
 
 func GenerateTypeScriptTypes(schema []PromptSchema, cfg *ConfigurationOutputTS) ([]byte, error) {
+	if len(schema) == 0 {
+		return []byte{}, nil
+	}
 	t := template.Must(template.New("ts").Funcs(template.FuncMap{
 		"capitalize": capitalizeFunc,
 	}).Parse(tsTpl))
