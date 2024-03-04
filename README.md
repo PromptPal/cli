@@ -1,4 +1,4 @@
-# PromptPal CLI[![goreleaser](https://github.com/PromptPal/cli/actions/workflows/release.yaml/badge.svg)](https://github.com/PromptPal/cli/actions/workflows/release.yaml)
+# PromptPal CLI[![goreleaser](https://github.com/PromptPal/cli/actions/workflows/release.yaml/badge.svg)](https://github.com/PromptPal/cli/actions/workflows/release.yaml) [![codecov](https://codecov.io/gh/PromptPal/cli/graph/badge.svg?token=Y6FVYRIZ7X)](https://codecov.io/gh/PromptPal/cli)
 
 > **Warning**
 > This project is currently in an early stage of development and may not be suitable for production use. Use with caution and expect frequent updates and changes.
