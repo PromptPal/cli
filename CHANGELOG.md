@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.2.0](https://github.com/PromptPal/cli/compare/v1.1.1...v1.2.0) (2024-03-04)
+
+
+### Features
+
+* **tests:** add tests for generator ([e60ec1e](https://github.com/PromptPal/cli/commit/e60ec1ea0a21a0abc1db63cbe54105fb1d249247))
+
+
+### Bug Fixes
+
+* **ci:** update github actions to latest version ([7967865](https://github.com/PromptPal/cli/commit/7967865d7db519eed54ba8206473754bcb7fc9ea))
+* **docs:** add test coverage at cli ([7b1d2f7](https://github.com/PromptPal/cli/commit/7b1d2f7a1e7d5e3b6bd6c21952f6b7a8028b7dc5))
+* **go:** upgrade go version to 1.22 ([513bd6e](https://github.com/PromptPal/cli/commit/513bd6ed7bb0a59405e883344bcd3fdf9fb41c9e))
+
 ## [1.1.1](https://github.com/PromptPal/cli/compare/v1.1.0...v1.1.1) (2023-07-19)
 
 
