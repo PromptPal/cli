@@ -96,8 +96,6 @@ func commandGenerate(c *cli.Context) error {
 		}
 
 		err = os.WriteFile(config.Output.GoTypes.Output, goTypesBuf, 0644)
-		// err = os.WriteFile(ooo, []byte("hello world"), 0644)
-		// err = os.WriteFile("./types.go", []byte("hello world"), 0644)
 		if err != nil {
 			return err
 		}
@@ -169,7 +167,7 @@ func loadSchema(client *resty.Client, config internal.Configuration) ([]internal
 		if err != nil {
 			return nil, err
 		}
-		err = ioutil.WriteFile(schemaFilePath, schemaBuf, 0644)
+		err = os.WriteFile(schemaFilePath, schemaBuf, 0644)
 		if err != nil {
 			return nil, err
 		}
