@@ -24,3 +24,4 @@ schema.g.json
 *.g.go
 *.g.ts
 dist/
+promptpal-testing

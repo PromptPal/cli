@@ -20,7 +20,7 @@ func GenerateGoTypes(schema []PromptSchema, cfg *ConfigurationOutputGo) ([]byte,
 	t.Execute(&result, templateStruct{
 		PackageName: cfg.PackageName,
 		Prefix:      cfg.Prefix,
-		Prompts:     schema,
+		Prompts:     normalizeSchema(schema),
 	})
 	return result.Bytes(), nil
 }

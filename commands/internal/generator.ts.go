@@ -20,7 +20,7 @@ func GenerateTypeScriptTypes(schema []PromptSchema, cfg *ConfigurationOutputTS) 
 	t.Execute(&result, templateStruct{
 		PackageName: "",
 		Prefix:      cfg.Prefix,
-		Prompts:     schema,
+		Prompts:     normalizeSchema(schema),
 	})
 	return result.Bytes(), nil
 }
