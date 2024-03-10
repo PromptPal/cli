@@ -2,13 +2,20 @@ package internal
 
 import "unicode"
 
+// TODO: need sync this logic to website to make sure it's correct.
 func convertString(str string) string {
 	var result string
+	isPreviousUnderscore := false
 	for _, char := range str {
-		if unicode.IsLetter(char) || unicode.IsNumber(char) || char == '_' {
-			result += string(char)
+		if unicode.IsLetter(char) || unicode.IsNumber(char) {
+			if isPreviousUnderscore {
+				result += string(unicode.ToUpper(char))
+				isPreviousUnderscore = false
+			} else {
+				result += string(char)
+			}
 		} else {
-			result += "_"
+			isPreviousUnderscore = true
 		}
 	}
 	return result
