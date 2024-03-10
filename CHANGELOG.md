@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.1](https://github.com/PromptPal/cli/compare/v1.2.0...v1.2.1) (2024-03-10)
+
+
+### Bug Fixes
+
+* **generate:** fix name converter ([12ff7e0](https://github.com/PromptPal/cli/commit/12ff7e0fa2c8cd8a2739c70b96a30c2eb6bc5984))
+* **generator:** convert prompt name to `_` to avoid generate issue ([d9b0f88](https://github.com/PromptPal/cli/commit/d9b0f882125bdcde0b05eabe3cf96edb8b77193b))
+
 ## [1.2.0](https://github.com/PromptPal/cli/compare/v1.1.1...v1.2.0) (2024-03-04)
 
 
