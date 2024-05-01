@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"io/ioutil"
 	"os"
 	"path"
 	"strconv"
@@ -57,7 +56,7 @@ func commandGenerate(c *cli.Context) error {
 		return err
 	}
 
-	configBuf, err := ioutil.ReadFile(configFilePath)
+	configBuf, err := os.ReadFile(configFilePath)
 	if err != nil {
 		return err
 	}
