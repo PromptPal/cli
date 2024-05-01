@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/PromptPal/cli/compare/v1.2.1...v1.2.2) (2024-05-01)
+
+
+### Bug Fixes
+
+* **cli:** add http agent header ([e417042](https://github.com/PromptPal/cli/commit/e417042f487487a3b3b9b04430b2b3d87eb2afe1))
+
 ## [1.2.1](https://github.com/PromptPal/cli/compare/v1.2.0...v1.2.1) (2024-03-10)
 
 
