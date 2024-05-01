@@ -70,7 +70,8 @@ func commandGenerate(c *cli.Context) error {
 
 	client := resty.
 		New().
-		SetTimeout(10 * time.Second)
+		SetTimeout(10*time.Second).
+		SetHeader("User-Agent", "PromptPal-CLI/1.2")
 
 	// fetch prompts list
 	schema, err := loadSchema(client, config)
