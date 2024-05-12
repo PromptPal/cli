@@ -132,6 +132,7 @@ func loadSchema(client *resty.Client, config internal.Configuration) ([]internal
 
 	// TODO: load from cache
 
+	// TODO: what if more than 100 prompts
 	resp, err := client.R().
 		SetHeader("Content-Type", "application/json").
 		SetAuthScheme("API").
