@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.6](https://github.com/PromptPal/cli/compare/v1.2.5...v1.2.6) (2024-05-12)
+
+
+### Bug Fixes
+
+* **ci:** ignore coverage file ([35da602](https://github.com/PromptPal/cli/commit/35da602f130f5a3f36e4fadea5c9169a5605e1eb))
+
 ## [1.2.5](https://github.com/PromptPal/cli/compare/v1.2.4...v1.2.5) (2024-05-12)
 
 
