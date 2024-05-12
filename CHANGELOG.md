@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.7](https://github.com/PromptPal/cli/compare/v1.2.6...v1.2.7) (2024-05-12)
+
+
+### Bug Fixes
+
+* **ci:** fix ci variable ([fc9de46](https://github.com/PromptPal/cli/commit/fc9de4663a96d71297ead39c788e0ecd7d758741))
+
 ## [1.2.6](https://github.com/PromptPal/cli/compare/v1.2.5...v1.2.6) (2024-05-12)
 
 
