@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.4](https://github.com/PromptPal/cli/compare/v1.2.3...v1.2.4) (2024-05-12)
+
+
+### Bug Fixes
+
+* **ci:** enable release in ci action ([70ad75d](https://github.com/PromptPal/cli/commit/70ad75de74fad73c7c2148d258549224100449e2))
+
 ## [1.2.3](https://github.com/PromptPal/cli/compare/v1.2.2...v1.2.3) (2024-05-12)
 
 
