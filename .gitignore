@@ -24,4 +24,5 @@ schema.g.json
 *.g.go
 *.g.ts
 dist/
+coverage.txt
 promptpal-testing
