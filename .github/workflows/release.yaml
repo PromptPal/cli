@@ -1,4 +1,4 @@
-name: goreleaser
+name: Release
 on:
   push:
     branches:
@@ -31,8 +31,7 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
       - uses: goreleaser/goreleaser-action@v5
-        # if: ${{ steps.release.outputs.release_created }}
-        if: false
+        if: ${{ steps.release.outputs.release_created }}
         with:
           distribution: goreleaser
           version: latest
