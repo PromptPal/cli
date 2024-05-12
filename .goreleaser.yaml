@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=https://goreleaser.com/static/schema.json
 builds:
   # - binary: "{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}."
   - binary: "promptpal"
@@ -11,7 +12,7 @@ builds:
     env:
       - CGO_ENABLED=0
     ldflags:
-      - -X github.com/PromptPal/cli/main.GitCommit={{ .Version }}
+      - -s -w -X github.com/PromptPal/cli/main.GitCommit={{ .Version }}
   - binary: "promptpal"
     id: pp-mac
     goos:
@@ -22,11 +23,7 @@ builds:
     env:
       - CGO_ENABLED=0
     ldflags:
-      - -X github.com/PromptPal/cli/main.GitCommit={{ .Version }}
-    hooks:
-      post:
-        - cmd: ./post-build.bash {{ .Path }}
-          output: true
+      - -s -w -X github.com/PromptPal/cli/main.GitCommit={{ .Version }}
 archives:
   - format: tar.gz
     builds:
@@ -41,103 +38,32 @@ archives:
       {{- if .Arm }}v{{ .Arm }}{{ end }}
     # use zip for windows archives
     format_overrides:
-    - goos: windows
-      format: zip
+      - goos: windows
+        format: zip
 checksum:
-  name_template: 'checksums.txt'
+  name_template: "checksums.txt"
 snapshot:
   name_template: "{{ incpatch .Version }}-next"
 changelog:
   sort: asc
   filters:
     exclude:
-      - '^docs:'
-      - '^test:'
-
-# signs:
-#   - signature: "${artifact}"
-#     ids:
-#     - pp-common
-#     - pp-mac
-#     cmd: gon
-#     # you can follow the gon docs to properly create the gon.hcl config file:
-#     # https://github.com/mitchellh/gon
-#     args:
-#     - .gon.hcl
-#     artifacts: all
-
-# signs:
-  # - cmd: cosign
-    # signature: "${artifact}.sig"
-    # certificate: '{{ trimsuffix (trimsuffix .Env.artifact ".zip") ".tar.gz" }}.pem'
-    # args: ["sign-blob", "--yes", "--output-signature=${signature}", "--output-certificate", "${certificate}", "${artifact}"]
-    # artifacts: all
+      - "^docs:"
+      - "^test:"
 
 release:
-  # Repo in which the release will be created.
-  # Default is extracted from the origin remote URL or empty if its private hosted.
   github:
     owner: PromptPal
     name: cli
 
-  # IDs of the archives to use.
-  # Empty means all IDs.
-  #
-  # Default: []
   ids:
     - default
     # - cli
 
-  # If set to true, will not auto-publish the release.
-  # Available only for GitHub and Gitea.
-  #
-  # Default: false
   draft: false
-
-  # Whether to remove existing draft releases with the same name before creating
-  # a new one.
-  # Only effective if `draft` is set to true.
-  # Available only for GitHub.
-  #
-  # Default: false
-  # Since: v1.11
   replace_existing_draft: false
-
-  # Useful if you want to delay the creation of the tag in the remote.
-  # You can create the tag locally, but not push it, and run GoReleaser.
-  # It'll then set the `target_commitish` portion of the GitHub release to the
-  # value of this field.
-  # Only works on GitHub.
-  #
-  # Default: ''
-  # Since: v1.11
-  # Templates: allowed
   target_commitish: "{{ .Commit }}"
-
-  # If set, will create a release discussion in the category specified.
-  #
-  # Warning: do not use categories in the 'Announcement' format.
-  #  Check https://github.com/goreleaser/goreleaser/issues/2304 for more info.
-  #
-  # Default is empty.
-  # discussion_category_name: General
-
-  # If set to auto, will mark the release as not ready for production
-  # in case there is an indicator for this in the tag e.g. v1.0.0-rc1
-  # If set to true, will mark the release as not ready for production.
-  # Default is false.
-  prerelease: 'false'
-
-  # What to do with the release notes in case there the release already exists.
-  #
-  # Valid options are:
-  # - `keep-existing`: keep the existing notes
-  # - `append`: append the current release notes to the existing notes
-  # - `prepend`: prepend the current release notes to the existing notes
-  # - `replace`: replace existing notes
-  #
-  # Default is `keep-existing`.
-  # mode: append
+  prerelease: "false"
   mode: replace
   header: |
     ## PromptPal CLI ({{ .Date }})
@@ -149,7 +75,6 @@ release:
     ## Thanks!
 
     Those were the changes on {{ .Tag }}!
-  # name_template: "{{.ProjectName}}-v{{.Version}} {{.Env.USER}}"
   name_template: "v{{.Version}}"
   disable: false
   skip_upload: false
@@ -157,3 +82,15 @@ release:
     - glob: ./dist/cli_Darwin_*.zip
   #   - glob: ./dist/*.tar.gz
   #   - glob: ./dist/checksums.txt
+notarize:
+  macos:
+    - enabled: '{{ isEnvSet "MACOS_SIGN_P12" }}'
+      ids:
+        - pp-mac
+      sign:
+        certificate: "{{.Env.MACOS_SIGN_P12}}"
+        password: "{{.Env.MACOS_SIGN_PASSWORD}}"
+      notarize:
+        issuer_id: "{{.Env.MACOS_NOTARY_ISSUER_ID}}"
+        key_id: "{{.Env.MACOS_NOTARY_KEY_ID}}"
+        key: "{{.Env.MACOS_NOTARY_KEY}}"
