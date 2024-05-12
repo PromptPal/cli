@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.3](https://github.com/PromptPal/cli/compare/v1.2.2...v1.2.3) (2024-05-12)
+
+
+### Features
+
+* **ci:** upgrade release-please to latest version ([e357166](https://github.com/PromptPal/cli/commit/e3571662d7daa8a4db009ec555103c626100e26b))
+* remove gon with quill instead ([85f8988](https://github.com/PromptPal/cli/commit/85f8988f760b663480facef7c2bc6d6f1dd06452))
+
+
+### Miscellaneous Chores
+
+* release 1.2.3 ([28103c6](https://github.com/PromptPal/cli/commit/28103c6ae207aff88b8618acbe0ce28bc9e426e6))
+
 ## [1.2.2](https://github.com/PromptPal/cli/compare/v1.2.1...v1.2.2) (2024-05-01)
 
 
