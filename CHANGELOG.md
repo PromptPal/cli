@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.5](https://github.com/PromptPal/cli/compare/v1.2.4...v1.2.5) (2024-05-12)
+
+
+### Bug Fixes
+
+* **docs:** update docs ([fd9fec3](https://github.com/PromptPal/cli/commit/fd9fec3f31d836e438f49110c69ba15e040d8334))
+
 ## [1.2.4](https://github.com/PromptPal/cli/compare/v1.2.3...v1.2.4) (2024-05-12)
 
 
