@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.8](https://github.com/PromptPal/cli/compare/v1.2.7...v1.2.8) (2024-05-13)
+
+
+### Bug Fixes
+
+* **script:** revert goreleaser config to previous version ([d7e160d](https://github.com/PromptPal/cli/commit/d7e160de1b1dd1e8cb97b3392e278c59ec2d38de))
+
 ## [1.2.7](https://github.com/PromptPal/cli/compare/v1.2.6...v1.2.7) (2024-05-12)
 
 
