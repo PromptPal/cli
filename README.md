@@ -98,6 +98,13 @@ Thank you for considering contributing to the PromptPal CLI project! Your contri
 
 4. Wait for the new release to be created on GitHub. Once the release is created, run `git pull` on your local machine to ensure that you have the latest changes.
 
+5. Run the following command in your local macOS environment to upload all the artifacts:
+
+   ```bash
+   goreleaser --clean
+   ```
+This command will build the project, create release artifacts, and upload them to the GitHub release page.
+
 Please note that these steps are specific to the release process of the PromptPal CLI project. If you have any questions or need further assistance, feel free to reach out to us.
 
 We appreciate your contributions and look forward to your continued support!
