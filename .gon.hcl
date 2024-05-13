@@ -8,7 +8,8 @@ bundle_id = "com.annatarhe.promptpal.cli"
 
 apple_id {
   username = "iamhele1994@gmail.com"
-  password = "@env:AC_PASSWORD"
+  password = "@env:AC_PASSWORD" # omit this line if env already set
+  provider = "VY3AP6C55K"
 }
 
 sign {

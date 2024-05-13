@@ -25,7 +25,7 @@ source = ["$file_path"]
 bundle_id = "com.annatarhe.promptpal.cli"
 apple_id {
   username = "iamhele1994@gmail.com"
-  password = "@env:AC_PASSWORD"
+  provider = "VY3AP6C55K"
 }
 sign {
   application_identity = "Developer ID Application: Le He"
