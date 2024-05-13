@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.10](https://github.com/PromptPal/cli/compare/v1.2.9...v1.2.10) (2024-05-13)
+
+
+### Bug Fixes
+
+* **script:** fix build script ([c8862b2](https://github.com/PromptPal/cli/commit/c8862b26f6d5b41d287b6f4e003d3a0db24fb654))
+
 ## [1.2.9](https://github.com/PromptPal/cli/compare/v1.2.8...v1.2.9) (2024-05-13)
 
 
