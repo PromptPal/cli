@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.9](https://github.com/PromptPal/cli/compare/v1.2.8...v1.2.9) (2024-05-13)
+
+
+### Bug Fixes
+
+* **script:** fix permission issue on post-build.sh ([9865b18](https://github.com/PromptPal/cli/commit/9865b18f1476ad51d113b8142aedb9f57b8aba84))
+
 ## [1.2.8](https://github.com/PromptPal/cli/compare/v1.2.7...v1.2.8) (2024-05-13)
 
 
