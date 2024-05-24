@@ -4,8 +4,6 @@
 OS=$(uname -s)
 ARCH=$(uname -m)
 
-
-
 # Function to check if a command is available
 command_exists() {
     command -v "$1" >/dev/null 2>&1
@@ -17,14 +15,13 @@ if ! command_exists curl; then
     exit 1
 fi
 
-
-TARGET_FILE_NAME="https://github.com/PromptPal/cli/releases/download/latest/cli_"
+TARGET_FILE_NAME="https://github.com/PromptPal/cli/releases/latest/download/cli_"
 
 cd /tmp
 
 # Set the download URL based on the OS and architecture
 if [[ "$OS" == "Darwin" ]]; then
-	TARGET_FILE_NAME="${TARGET_FILE_NAME}${OS}"
+    TARGET_FILE_NAME="${TARGET_FILE_NAME}${OS}"
     if [[ "$ARCH" == "x86_64" ]]; then
         URL="${TARGET_FILE_NAME}_amd64_v1.zip"
     elif [[ "$ARCH" == "arm64" ]]; then
@@ -36,8 +33,9 @@ if [[ "$OS" == "Darwin" ]]; then
     if ! command_exists unzip; then
         echo "Error: unzip is not installed."
         exit 1
+    fi
 elif [[ "$OS" == "Linux" ]]; then
-	TARGET_FILE_NAME="${TARGET_FILE_NAME}${OS}"
+    TARGET_FILE_NAME="${TARGET_FILE_NAME}${OS}"
     if [[ "$ARCH" == "x86_64" ]]; then
         URL="${TARGET_FILE_NAME}_x86_64.tar.gz"
     elif [[ "$ARCH" == "aarch64" ]]; then
@@ -46,11 +44,12 @@ elif [[ "$OS" == "Linux" ]]; then
         echo "Unsupported architecture: $ARCH on Linux"
         exit 1
     fi
-	if ! command_exists tar; then
+    if ! command_exists tar; then
         echo "Error: tar is not installed."
         exit 1
+    fi
 elif [[ "$OS" == "MINGW64_NT" ]] || [[ "$OS" == "MSYS_NT" ]] || [[ "$OS" == "CYGWIN_NT" ]]; then
-	TARGET_FILE_NAME="${TARGET_FILE_NAME}Windows"
+    TARGET_FILE_NAME="${TARGET_FILE_NAME}Windows"
     if [[ "$ARCH" == "x86_64" ]]; then
         URL="${TARGET_FILE_NAME}_x86_64.zip"
     elif [[ "$ARCH" == "aarch64" ]]; then
@@ -62,6 +61,7 @@ elif [[ "$OS" == "MINGW64_NT" ]] || [[ "$OS" == "MSYS_NT" ]] || [[ "$OS" == "CYG
     if ! command_exists unzip; then
         echo "Error: unzip is not installed."
         exit 1
+    fi
 else
     echo "Unsupported OS: $OS"
     exit 1
@@ -80,6 +80,7 @@ else
     echo "Unsupported file type: $FILENAME"
     exit 1
 fi
+
 
 # Move the binary to the appropriate location
 if [[ "$OS" == "Darwin" ]] || [[ "$OS" == "Linux" ]]; then
