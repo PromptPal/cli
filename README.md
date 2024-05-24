@@ -17,24 +17,16 @@ PromptPal CLI is a command line interface tool designed in Golang to streamline 
 
 To install the PromptPal CLI, follow these steps:
 
-1. Go to the [Release](https://github.com/PromptPal/cli/releases) page on GitHub.
-
-2. Download the appropriate prebuilt binary package for your operating system and architecture.
-
-3. Unzip or extract the downloaded package. In the extracted folder, you will find the `promptpal` binary.
-
-4. Open a terminal and navigate to the extracted folder containing the `promptpal` binary.
-
-5. To make the `promptpal` command accessible system-wide, run the following command:
-
-   ```bash
-   sudo mv ./promptpal /usr/local/bin
-   ```
+```bash
+bash <(curl -s https://raw.githubusercontent.com/PromptPal/cli/master/install.bash)
+```
 
 This command moves the promptpal binary to the /usr/local/bin directory, which is typically included in the system's PATH. You may need to enter your administrator password for the command to execute successfully.
 
+> **Warning**
+> After running the installation script on Windows, you will need to manually move the promptpal binary to a directory included in your system's PATH, such as C:\Windows\System32 or another directory of your choice.
+
 You can now use the promptpal command in your terminal to interact with the PromptPal CLI.
-Please note that the steps above are an example for Unix-like operating systems. For Windows systems, the process may differ.
 
 ## Usage
 The usage instructions for the PromptPal CLI remain the same as described in the previous sections of this README.
