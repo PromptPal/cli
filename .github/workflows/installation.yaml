@@ -3,6 +3,7 @@ name: Test Install Script
 on:
   push:
     paths:
+      - ".github/workflows/installation.yaml"
       - "install.bash"
 
 jobs:
