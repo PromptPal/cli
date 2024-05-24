@@ -1,0 +1,54 @@
+name: Test Install Script
+
+on:
+  push:
+    paths:
+      - ".github/workflows/installation.yaml"
+      - "install.bash"
+
+jobs:
+  test-install:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        arch: [amd64, arm64]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # - name: Set up QEMU for ARM architectures
+      #   if: matrix.arch == 'arm64'
+      #   uses: docker/setup-qemu-action@v3
+
+      - name: Run install script on Linux
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y curl unzip tar
+          chmod +x ./install.bash
+          ./install.bash
+
+      - name: Run install script on macOS
+        if: matrix.os == 'macos-latest'
+        run: |
+          brew install curl unzip
+          chmod +x ./install.bash
+          ./install.bash
+
+      - name: Run install script on Windows
+        if: matrix.os == 'windows-latest'
+        run: |
+          choco install curl unzip
+          ./install.bash
+
+      - name: Unix-Like Verify installation
+        run: promptpal -h
+        if: matrix.os != 'windows-latest'
+        shell: bash
+
+      - name: Windows Verify installation
+        run: promptpal -h
+        # if: matrix.os == 'windows-latest'
+        if: false
+        shell: powershell
