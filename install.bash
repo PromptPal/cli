@@ -94,3 +94,5 @@ rm -rf promptpal
 
 # Success message
 echo "Installation successful! You can try the command by running 'promptpal -h'."
+
+exit 0
