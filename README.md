@@ -1,6 +1,6 @@
 # PromptPal CLI[![goreleaser](https://github.com/PromptPal/cli/actions/workflows/release.yaml/badge.svg)](https://github.com/PromptPal/cli/actions/workflows/release.yaml) [![codecov](https://codecov.io/gh/PromptPal/cli/graph/badge.svg?token=Y6FVYRIZ7X)](https://codecov.io/gh/PromptPal/cli)
 
-> **Warning**
+> [!WARNING]
 > This project is currently in an early stage of development and may not be suitable for production use. Use with caution and expect frequent updates and changes.
 
 PromptPal CLI is a command line interface tool designed in Golang to streamline prompt management and code generation for the PromptPal project. It allows developers to initialize a configuration file and generate code structures for seamless integration with Golang and Node.js applications.
@@ -13,7 +13,7 @@ PromptPal CLI is a command line interface tool designed in Golang to streamline 
 
 - **Seamless Integration**: The generated code structures can be easily integrated into Golang and Node.js applications, enabling developers to leverage the prompt actions provided by the PromptPal project.
 
-## Installation (Example for Unix-like Operating Systems)
+## Installation
 
 To install the PromptPal CLI, follow these steps:
 
@@ -23,7 +23,7 @@ bash <(curl -s https://raw.githubusercontent.com/PromptPal/cli/master/install.ba
 
 This command moves the promptpal binary to the /usr/local/bin directory, which is typically included in the system's PATH. You may need to enter your administrator password for the command to execute successfully.
 
-> **Warning**
+> [!WARNING]
 > After running the installation script on Windows, you will need to manually move the promptpal binary to a directory included in your system's PATH, such as C:\Windows\System32 or another directory of your choice.
 
 You can now use the promptpal command in your terminal to interact with the PromptPal CLI.
