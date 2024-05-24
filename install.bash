@@ -81,9 +81,6 @@ else
     exit 1
 fi
 
-# FIXME: remove me later
-exit 13
-
 # Move the binary to the appropriate location
 if [[ "$OS" == "Darwin" ]] || [[ "$OS" == "Linux" ]]; then
     sudo mv promptpal /usr/local/bin
