@@ -16,9 +16,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up QEMU for ARM architectures
-        if: matrix.arch == 'arm64'
-        uses: docker/setup-qemu-action@v3
+      # - name: Set up QEMU for ARM architectures
+      #   if: matrix.arch == 'arm64'
+      #   uses: docker/setup-qemu-action@v3
 
       - name: Run install script on Linux
         if: matrix.os == 'ubuntu-latest'
