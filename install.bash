@@ -86,12 +86,22 @@ fi
 if [[ "$OS" == "Darwin" ]] || [[ "$OS" == "Linux" ]]; then
     sudo mv promptpal /usr/local/bin
 elif [[ "$OS" == "MINGW64_NT" ]] || [[ "$OS" == "MSYS_NT" ]] || [[ "$OS" == "CYGWIN_NT" ]]; then
-    mv promptpal /c/Windows/System32/
+    # mv promptpal /c/Windows/System32/
 fi
 
 # Clean up
 rm -f "$FILENAME"
 rm -rf promptpal
 
+
+# HELP WANTED
+# I don't know where the `/bin` folder in windows. so i don't know where should the binaries be installed.
+# if you know, please let me know.
+
 # Success message
 echo "Installation successful! You can try the command by running 'promptpal -h'."
+
+if [[ "$OS" == "MINGW64_NT" ]] || [[ "$OS" == "MSYS_NT" ]] || [[ "$OS" == "CYGWIN_NT" ]]; then
+	echo "Please note that the binaries are not installed yet. please move `/tmp/promptpal` to your `/bin/` folder manually."
+	echo "btw if you know where should the binaries be installed, please raise an issue or pull request. (https://github.com/PromptPal/cli)."
+fi
