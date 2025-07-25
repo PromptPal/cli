@@ -24,10 +24,6 @@ builds:
       - CGO_ENABLED=0
     ldflags:
       - -s -w -X github.com/PromptPal/cli/main.GitCommit={{ .Version }}
-    hooks:
-      post:
-        - cmd: ./post-build.bash {{ .Path }}
-          output: true
 archives:
   - format: tar.gz
     builds:
