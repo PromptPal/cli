@@ -1,5 +1,22 @@
 # Changelog
 
+## [1.2.12](https://github.com/PromptPal/cli/compare/v1.2.11...v1.2.12) (2025-07-25)
+
+
+### Features
+
+* **release:** enable macOS notarization in goreleaser ([7e531a8](https://github.com/PromptPal/cli/commit/7e531a8e7db9ddc9ea166acee6248b04f16b8721))
+
+
+### Bug Fixes
+
+* **ci:** re-enable goreleaser in release workflow ([4d09d11](https://github.com/PromptPal/cli/commit/4d09d117cd43a4648e25ee274b34771584f32322))
+
+
+### Miscellaneous Chores
+
+* release 1.2.12 ([400fb4d](https://github.com/PromptPal/cli/commit/400fb4d6b8165e1aca78449b81b5d3477c941ad5))
+
 ## [1.2.11](https://github.com/PromptPal/cli/compare/v1.2.10...v1.2.11) (2025-07-25)
 
 
