@@ -36,6 +36,12 @@ var GenerateCommand *cli.Command = &cli.Command{
 			Value:   false,
 			Usage:   "force overwrite existing schema file",
 		},
+		&cli.StringFlag{
+			Name:    "config",
+			Aliases: []string{"c"},
+			Value:   "",
+			Usage:   "path to custom config file",
+		},
 	},
 	Action: commandGenerate,
 }
@@ -46,9 +52,12 @@ func commandGenerate(c *cli.Context) error {
 		return err
 	}
 
-	configFilePath := cwd + "/" + defaultConfigFileName
+	configFilePath := c.String("config")
+	if configFilePath == "" {
+		configFilePath = cwd + "/" + defaultConfigFileName
+	}
+	
 	_, err = os.Stat(configFilePath)
-
 	if err != nil {
 		if os.IsNotExist(err) {
 			return errors.New("config file not found. please run 'promptpal init' first")
