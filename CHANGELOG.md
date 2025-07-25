@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.14](https://github.com/PromptPal/cli/compare/v1.2.13...v1.2.14) (2025-07-25)
+
+
+### Bug Fixes
+
+* **release:** update goreleaser config to properly support macOS builds ([5120936](https://github.com/PromptPal/cli/commit/51209368f6fba69813f98c4670fe43e2b6145d69))
+
 ## [1.2.13](https://github.com/PromptPal/cli/compare/v1.2.12...v1.2.13) (2025-07-25)
 
 
