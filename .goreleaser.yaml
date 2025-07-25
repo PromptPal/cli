@@ -28,6 +28,7 @@ archives:
   - format: tar.gz
     builds:
       - pp-common
+      - pp-mac
     # this name template makes the OS and Arch compatible with the results of uname.
     name_template: >-
       {{ .ProjectName }}_
@@ -39,6 +40,8 @@ archives:
     # use zip for windows archives
     format_overrides:
       - goos: windows
+        format: zip
+      - goos: darwin
         format: zip
 checksum:
   name_template: "checksums.txt"
@@ -79,9 +82,9 @@ release:
   disable: false
   skip_upload: false
   extra_files:
-    - glob: ./dist/cli_Darwin_*.zip
-  #   - glob: ./dist/*.tar.gz
-  #   - glob: ./dist/checksums.txt
+    - glob: ./dist/promptpal_*.tar.gz
+    - glob: ./dist/promptpal_*.zip
+    - glob: ./dist/checksums.txt
 notarize:
   macos:
     - enabled: '{{ isEnvSet "MACOS_SIGN_P12" }}'
