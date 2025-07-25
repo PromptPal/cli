@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.13](https://github.com/PromptPal/cli/compare/v1.2.12...v1.2.13) (2025-07-25)
+
+
+### Bug Fixes
+
+* **release:** remove post-build hook from goreleaser config ([ddb22a8](https://github.com/PromptPal/cli/commit/ddb22a8abbd115439a1fd50521d0473eaad2bff0))
+
 ## [1.2.12](https://github.com/PromptPal/cli/compare/v1.2.11...v1.2.12) (2025-07-25)
 
 
