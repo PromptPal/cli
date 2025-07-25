@@ -1,5 +1,35 @@
 # Changelog
 
+## [1.2.11](https://github.com/PromptPal/cli/compare/v1.2.10...v1.2.11) (2025-07-25)
+
+
+### Features
+
+* **cli:** add config flag to generate command ([6dcd71b](https://github.com/PromptPal/cli/commit/6dcd71bc124735b69c53c752850b974f2adaf9d8))
+* **docs:** add more install info in readme ([bd76ee5](https://github.com/PromptPal/cli/commit/bd76ee5745aa05c4192f53093c2e0b20099f65dd))
+* **install:** add one-click install script ([04d00cd](https://github.com/PromptPal/cli/commit/04d00cd10f98c8b2957a34f7b9a7a65c0448b662))
+* **install:** add one-click install script ([66efa11](https://github.com/PromptPal/cli/commit/66efa113d0856df7c6c80ee145a51c67a6f0d4ed))
+
+
+### Bug Fixes
+
+* **ci:** add exit code at end of install file ([c49a541](https://github.com/PromptPal/cli/commit/c49a5419968688e1fd2d43ba7a7a4c71a604d183))
+* **ci:** fix install check script ([e6d5fb0](https://github.com/PromptPal/cli/commit/e6d5fb0d0f060a5d90a56872df7ce90401fdeb6b))
+* **ci:** run install check action on ci yaml changes ([b0f887d](https://github.com/PromptPal/cli/commit/b0f887dfaf48c7aa027bde72aa1e63b3bb4b55b8))
+* **ci:** skip QEMU setup in arm ([4488de9](https://github.com/PromptPal/cli/commit/4488de9f91c445b22d8fe7ca3fdba631b5f73c8b))
+* **ci:** upgrade release action to new ([1fb435b](https://github.com/PromptPal/cli/commit/1fb435bb4c8573972205a000e08ef3545c5f4073))
+* **ci:** use powershell to check file executeable in ci ([daa334e](https://github.com/PromptPal/cli/commit/daa334e81f857bf4094cf58c8789142a5ee55fa6))
+* **claude:** add more settings for claude ([d7dfcb2](https://github.com/PromptPal/cli/commit/d7dfcb2417231bce7da0137615ba49bf2a2d86c6))
+* **docs:** fix warning style and remove useless tips ([14d9dd6](https://github.com/PromptPal/cli/commit/14d9dd61c3223833cc5d07fdb99ab7b6fbf9becd))
+* **install:** add help message in windows device ([bbd080e](https://github.com/PromptPal/cli/commit/bbd080e37c06228217655077742f331c1a223058))
+* **install:** ignore an unreachable branch ([b975d9b](https://github.com/PromptPal/cli/commit/b975d9b4b1e0a56b0dd5629bc5dfadb3fcb825df))
+* **install:** remove debug code ([0020254](https://github.com/PromptPal/cli/commit/00202546f9e3506c23716fc097ff5cd569cb702c))
+
+
+### Miscellaneous Chores
+
+* release 1.2.11 ([2290a60](https://github.com/PromptPal/cli/commit/2290a60acb04928b56ef0e60cfab0b52af148424))
+
 ## [1.2.10](https://github.com/PromptPal/cli/compare/v1.2.9...v1.2.10) (2024-05-13)
 
 
