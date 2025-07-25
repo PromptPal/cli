@@ -7,8 +7,7 @@
 			"Bash(rg:*)",
 			"Bash(ls:*)",
 			"Bash(npx eslint:*)",
-			"Bash(gh:*)",
-			"Bash(go:*)"
+			"Bash(gh:*)"
 		],
 		"deny": []
 	}
